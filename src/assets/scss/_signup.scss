@@ -1,0 +1,61 @@
+.body-wrapper {
+    .login-wrapper {
+        .left-grid {
+            .login-wrapper {
+                .log-in-inner-wrapper {
+                    h5 {
+                        margin-bottom: 40px;
+                    }
+                }
+            }
+            .sign-up-button {
+                border-radius: 2px;
+                background-color: #0089d1;
+                padding: 8px 40%;
+                color: #fff;
+                font-size: 16px;
+                &:hover {
+                    color: #ffffff;
+                }
+            }
+            
+            .rectangles {
+                width: 16px;
+                height: 16px;
+                border-radius: 2px;
+                border: solid 1px #9ea3a9;
+                background-color: #ffffff;
+                margin-top: 4px;
+            }
+
+            .envelope-icon {
+                color: #a5a5a5;
+                &:hover {
+                    color: #0089d1;
+                }
+            }
+            .input-svg-icon {
+                &:hover{
+                    svg {
+                        .main-icon{
+                            fill: #0089d1;
+                        }
+                    }
+                }
+            }
+            .create-checkbox {
+                height: 16px;
+                width: 16px;
+            }
+            .robot-recaptha {
+                .name-wrapper {
+                  border-color: #efefee !important;
+                }
+              }
+        }
+    }
+}
+
+
+
+
