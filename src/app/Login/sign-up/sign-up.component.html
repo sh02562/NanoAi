@@ -14,9 +14,11 @@
                                 <div class="log-in-inner-wrapper">
                                     <h5 class="text-center mt-4 new-account-wrapper">Create New Account</h5>
                                 </div>
-                                <form class="form-wrapper envelope-icon">
+                                <form class="form-wrapper envelope-icon" [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
                                     <div class="form-group position-relative password-wrapper">
-                                        <input type="text" name="user-name" required>
+                                        <input type="text" name="email" formControlName="email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                                        [class.is-invalid]="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched">
+                                        <small class="text-danger" [class.d-none]="signUpForm.get('email').valid || signUpForm.get('email').untouched">Please enter Email-Id in email@gmail.com format</small>
                                         <div class="position-absolute inputs-img input-svg-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
                                                 viewBox="0 0 22 22">
@@ -30,7 +32,8 @@
                                         <label>Email</label>
                                     </div>
                                     <div class="form-group position-relative password-wrapper">
-                                        <input type="text" name="user-name" required>
+                                        <input type="text" name="userName" required formControlName="userName"  [class.is-invalid]="signUpForm.get('userName').invalid && signUpForm.get('userName').touched" >
+                                        <small class="text-danger" [class.d-none]="signUpForm.get('userName').valid || signUpForm.get('userName').untouched">Please enter User Name</small>
                                         <div class="position-absolute inputs-img input-svg-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
                                                 viewBox="0 0 22 22">
@@ -45,7 +48,8 @@
                                     </div>
 
                                     <div class="form-group position-relative password-wrapper">
-                                        <input type="text" name="mobile-number" required>
+                                        <input type="text" name="mobileNumber" required formControlName="mobileNumber"  [class.is-invalid]="signUpForm.get('mobileNumber')?.invalid && signUpForm.get('mobileNumber').touched" pattern="^\d{10}$">
+                                        <small class="text-danger" [class.d-none]="signUpForm.get('mobileNumber').valid || signUpForm.get('mobileNumber').untouched">10 Digit Phone Number Required</small>
                                         <div class="position-absolute inputs-img input-svg-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
                                                 viewBox="0 0 22 22">
@@ -60,7 +64,8 @@
                                     </div>
 
                                     <div class="form-group position-relative password-wrapper">
-                                        <input type="text" name="organization" required>
+                                        <input type="text" name="organization" required formControlName="organization"  [class.is-invalid]="signUpForm.get('organization')?.invalid && signUpForm.get('organization').touched">
+                                        <small class="text-danger" [class.d-none]="signUpForm.get('organization').valid || signUpForm.get('organization').untouched">Please enter Organization</small>
                                         <div class="position-absolute inputs-img input-svg-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
                                                 viewBox="0 0 22 22">
@@ -79,7 +84,8 @@
                                         <label>Organization</label>
                                     </div>
                                     <div class="form-group position-relative password-wrapper">
-                                        <input type="text" name="password" required>
+                                        <input type="password" name="password" required formControlName="password"  [class.is-invalid]="signUpForm.get('password')?.invalid && signUpForm.get('password').touched">
+                                        <small class="text-danger" [class.d-none]="signUpForm.get('password').valid || signUpForm.get('password').untouched">Password Required</small>
                                         <div class="position-absolute inputs-img input-svg-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
                                                 viewBox="0 0 22 22">
@@ -102,7 +108,9 @@
                                         </div>
                                     </div>
                                     <div class="form-group position-relative password-wrapper">
-                                        <input type="text" name="confirm-password" required>
+                                        <input type="password" name="confirmPassword" required formControlName="confirmPassword"  [class.is-invalid]="signUpForm.get('confirmPassword')?.invalid && signUpForm.get('confirmPassword').touched">                                    
+                                        <small class="text-danger" [class.d-none]="signUpForm.get('confirmPassword').valid || signUpForm.get('confirmPassword').untouched">Confirm Password Required</small>
+                                        <small class="text-danger" *ngIf="signUpForm.hasError('misMatch')">Confirm Password Not Matched</small>                                       
                                         <div class="position-absolute inputs-img input-svg-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
                                                 viewBox="0 0 22 22">
@@ -143,11 +151,11 @@
                                                 & Conditions, Privacy Policy.</a></p>
                                     </div>
                                     <div class="text-center">
-                                        <button type="button" class="btn sign-up-button">Sign Up</button>
+                                        <button type="button" class="btn sign-up-button" [disabled]="!signUpForm.valid">Sign Up</button>
                                     </div>
                                     <div class="m-4 account-wrapper">
                                         <p class="text-center">Already have an account?<a href="./index.html"
-                                                class="ml-1">Login</a>
+                                            [routerLink]="['/']" class="ml-1">Login</a>
                                         </p>
                                     </div>
                                     <div class="mt-4 account-wrapper">
