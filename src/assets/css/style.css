@@ -1,10 +1,10 @@
  @font-face {
   font-family: 'SourceSansPro-Regular';
-  src: local("SourceSansPro-Regular"), url('./../fonts/SourceSansPro-Regular.ttf') format("truetype"); } 
+  src: local("SourceSansPro-Regular"), url('/assets/css/fonts/SourceSansPro-Regular.ttf') format("truetype"); } 
 
 @font-face {
   font-family: 'SourceSansPro-SemiBold';
-  src: local("SourceSansPro-SemiBold"), url('./../fonts/SourceSansPro-Semibold.ttf') format("truetype"); }
+  src: local("SourceSansPro-SemiBold"), url('/assets/css/fonts/SourceSansPro-Semibold.ttf') format("truetype"); }
   
   /* ../fonts/SourceSansPro-SemiBold.ttf */
   /* src/assets/fonts/SourceSansPro-Semibold.ttf */
