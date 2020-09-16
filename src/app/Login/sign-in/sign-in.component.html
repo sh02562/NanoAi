@@ -17,7 +17,7 @@
                                 </div>
                                 <form class="form-wrapper" [formGroup]="signInForm" (ngSubmit)="onSignIn()">
                                     <div class="form-group position-relative password-wrapper">
-                                        <input type="text" name="user-name" required formControlName="email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                                        <input autocomplete="off" type="text" name="user-name" required formControlName="email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
                                         [class.is-invalid]="signInForm.get('email')?.invalid && signInForm.get('email')?.touched">
                                         <small class="text-danger" [class.d-none]="signInForm.get('email').valid || signInForm.get('email').untouched">Please enter Email-Id in email@gmail.com format</small>
                                         <div class="position-absolute inputs-img input-svg-icon">
@@ -33,7 +33,7 @@
                                         <label>Email</label>
                                     </div>
                                     <div class="form-group position-relative password-wrapper">
-                                        <input type="password" name="password" required formControlName="password"  [class.is-invalid]="signInForm.get('password')?.invalid && signInForm.get('password').touched">
+                                        <input autocomplete="off" type="password" name="password" required formControlName="password"  [class.is-invalid]="signInForm.get('password')?.invalid && signInForm.get('password').touched">
                                         <small class="text-danger" [class.d-none]="signInForm.get('password').valid || signInForm.get('password').untouched">Password Required</small>
                                         <div class="position-absolute inputs-img input-svg-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"

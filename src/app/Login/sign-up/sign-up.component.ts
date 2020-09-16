@@ -17,6 +17,7 @@ export class SignUpComponent implements OnInit {
   password:  FormControl;
   confirmPassword:  FormControl;
   mobileNumber: FormControl;
+  loginControl : FormControl;
 
   constructor(private formBuilder: FormBuilder, private authService : AuthService, private router: Router) { 
     
@@ -25,10 +26,12 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
     this.email = new FormControl('', Validators.required);
     this.userName = new FormControl('', Validators.required);
-    this.password = new FormControl('', Validators.required);
+    // this.password = new FormControl('', Validators.required, Validators.minLength(8));
+    this.password = new FormControl('', Validators.compose([Validators.required,Validators.minLength(8)]));
     this.organization = new FormControl('', Validators.required);
     this.confirmPassword = new FormControl('', Validators.required);
     this.mobileNumber = new FormControl('', Validators.required);
+    this.loginControl = new FormControl('', Validators.required);
 
     this.signUpForm = this.formBuilder.group({
       email:this.email,
@@ -36,7 +39,8 @@ export class SignUpComponent implements OnInit {
       organization: this.organization,
       password: this.password,
       confirmPassword: this.confirmPassword,  
-      mobileNumber: this.mobileNumber,     
+      mobileNumber: this.mobileNumber,  
+      loginControl : this.loginControl,   
     },  {validator: MustMatch});
   }
 
