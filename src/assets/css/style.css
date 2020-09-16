@@ -360,7 +360,8 @@ select:-webkit-autofill:focus {
             font-size: 15px; }
       .body-wrapper .login-wrapper .left-grid .password-wrapper {
         border-color: #efefef;
-        height: 50px; }
+        /* height: 50px;  */
+      }
       .body-wrapper .login-wrapper .left-grid .forget-password-wrapper {
         font-size: 14px;
         font-weight: normal;
