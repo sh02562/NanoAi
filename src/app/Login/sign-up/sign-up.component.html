@@ -133,7 +133,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group position-relative password-wrapper robot-recaptha">
-                                        <input type="text" class="form-control name-wrapper" name="I'm not a robot"
+                                        <!-- <input type="text" class="form-control name-wrapper" name="I'm not a robot"
                                             placeholder="I'm not a robot">
                                         <div class="position-absolute inputs-img">
                                             <div class="rectangle"></div>
@@ -141,7 +141,8 @@
                                         <div class="position-absolute visible-img">
                                             <img src="assets/images/recaptcha-logo.png" class="img-fluid"
                                                 alt="recaptcha-logo">
-                                        </div>
+                                        </div> -->
+                                        <div class="g-recaptcha" data-sitekey="6Lfz1MwZAAAAAPlLjUuyPFOenKelXmmCSBgIMQ_Q"></div>
                                     </div>
                                     <div class="m-2 account-wrapper d-flex">
                                         <!-- <div class="rectangles"></div> -->
@@ -151,7 +152,8 @@
                                                 & Conditions, Privacy Policy.</a></p>
                                     </div>
                                     <div class="text-center">
-                                        <button type="button" class="btn sign-up-button" [disabled]="!signUpForm.valid">Sign Up</button>
+                                        <button type="submit" class="btn sign-up-button" 
+                                       [disabled]="!signUpForm.valid">Sign Up</button>
                                     </div>
                                     <div class="m-4 account-wrapper">
                                         <p class="text-center">Already have an account?<a href="./index.html"

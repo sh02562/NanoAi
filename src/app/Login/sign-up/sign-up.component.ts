@@ -18,7 +18,9 @@ export class SignUpComponent implements OnInit {
   confirmPassword:  FormControl;
   mobileNumber: FormControl;
 
-  constructor(private formBuilder: FormBuilder, private authService : AuthService, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private authService : AuthService, private router: Router) { 
+    
+  }
 
   ngOnInit(): void {
     this.email = new FormControl('', Validators.required);
@@ -39,7 +41,9 @@ export class SignUpComponent implements OnInit {
   }
 
   onSignUp(){
-    this.signUpForm.reset();
+    console.log(this.signUpForm);
+    this.authService.signUp(this.signUpForm.value)
+    // this.signUpForm.reset();
   }
 
 }

@@ -60,7 +60,8 @@
                                         <p class="forget-password-wrapper text-right">Forgot Password?</p>
                                     </div>
                                     <div class="form-group position-relative password-wrapper robot-recaptha">
-                                        <input type="text" class="form-control name-wrapper" name="I'm not a robot"
+                                        <div class="g-recaptcha" data-sitekey="6Lfz1MwZAAAAAPlLjUuyPFOenKelXmmCSBgIMQ_Q"></div>
+                                        <!-- <input type="text" class="form-control name-wrapper" name="I'm not a robot"
                                             placeholder="I'm not a robot">
                                         <div class="position-absolute inputs-img">
                                             <div class="rectangle"></div>
@@ -68,10 +69,10 @@
                                         <div class="position-absolute visible-img">
                                             <img src="assets/images/recaptcha-logo.png" class="img-fluid"
                                                 alt="recaptcha-logo">
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="text-center">
-                                        <button type="button" class="btn button-wrapper">Login</button>
+                                        <button type="submit" class="btn button-wrapper">Login</button>
                                     </div>
                                     <div class="m-4 account-wrapper">
                                         <p class="text-center">Don't have an account?<a href="./signIn.html" 
@@ -83,7 +84,7 @@
                                     </div>
                                     <div class="d-flex justify-content-between mb-3 buttons-wrapper">
                                         <div>
-                                            <button type="button" class="google-button">
+                                            <button type="button" class="google-button" (click)="googleSignIn()">
                                                 <span class="fab fa-google-plus-g identity-wrapper"></span>
                                                 Google</button>
                                         </div>
