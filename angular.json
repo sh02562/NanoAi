@@ -27,13 +27,8 @@
               "src/favicon.ico",
               "src/assets"
             ],
-<<<<<<< HEAD
             "styles": [
               "src/styles.scss"                              
-=======
-            "styles": [ 
-              "src/styles.scss"                     
->>>>>>> 7701c82921e4fbd7190f5c63b06c4e775f24eb08
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
