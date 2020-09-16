@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators,FormControl } from '@angular/forms';
 import { Router } from  '@angular/router';
 import { AuthService } from 'src/app/services/service/auth.service';
 import { MustMatch } from 'src/app/services/validator/mustMatch.validator'
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-sign-up',
@@ -21,7 +22,7 @@ export class SignUpComponent implements OnInit {
   showPassword: boolean = true;
   showCpasswd: boolean = true;
 
-  constructor(private formBuilder: FormBuilder, private authService : AuthService, private router: Router) { 
+  constructor(private formBuilder: FormBuilder,private toastr: ToastrService, private authService : AuthService, private router: Router) { 
     
   }
 
@@ -47,8 +48,19 @@ export class SignUpComponent implements OnInit {
   }
 
   onSignUp(){
-    console.log(this.signUpForm);
-    this.authService.signUp(this.signUpForm.value)
+    const d = this.authService.signUp();
+    const signUpData = this.signUpForm.value;
+    signUpData['connection'] = 'Username-Password-Authentication';
+    let that = this;
+    d.signup(signUpData, function (err) {
+      if (err) {
+        that.toastr.error('Error :', err.message);
+      }else{
+        that.toastr.success('Message :', 'Registered Successfully !!');
+      }
+     
+    });
+    console.log(d);
     // this.signUpForm.reset();
   }
 

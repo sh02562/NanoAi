@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as Auth0 from 'auth0-js';
-// import {JwtHelperService} from '@auth0/angular-jwt';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,12 +16,8 @@ export class AuthService {
     });
   }
   /** defining signup functionality for user signup */
-  signUp(signUpData: object) {
-    signUpData['connection'] = 'Username-Password-Authentication';
-    this.auth0.signup(signUpData, function (err) {
-      if (err) return alert('Something went wrong: ' + err.message);
-      return alert('You have successfully registered.')
-    });
+  signUp() {    
+    return this.auth0;
   }
   /** defining signin functionality for user signIn */
   signIn(email, password) {
