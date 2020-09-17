@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators,FormControl } from '@angular/forms';
 import { Router } from  '@angular/router';
 import { AuthService } from 'src/app/services/service/auth.service';
-import { MustMatch } from 'src/app/services/validator/mustMatch.validator'
+import { MustMatch } from 'src/app/services/validator/mustMatch.validator';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -22,15 +22,17 @@ export class SignUpComponent implements OnInit {
   showPassword: boolean = true;
   showCpasswd: boolean = true;
 
-  constructor(private formBuilder: FormBuilder,private toastr: ToastrService, private authService : AuthService, private router: Router) { 
-    
-  }
+  constructor(private formBuilder: FormBuilder, private authService : AuthService, 
+    private router: Router,
+    private toaster:ToastrService ) { }
 
   ngOnInit(): void {
     this.email = new FormControl('', Validators.required);
     this.userName = new FormControl('', Validators.required);
     // this.password = new FormControl('', Validators.required, Validators.minLength(8));
-    this.password = new FormControl('', Validators.compose([Validators.required,Validators.minLength(8)]));
+     this.password = new FormControl('', Validators.compose([Validators.required,Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$')]));
+
+      
     this.organization = new FormControl('', Validators.required);
     this.confirmPassword = new FormControl('', Validators.required);
     this.mobileNumber = new FormControl('', Validators.required);
@@ -51,17 +53,24 @@ export class SignUpComponent implements OnInit {
     const d = this.authService.signUp();
     const signUpData = this.signUpForm.value;
     signUpData['connection'] = 'Username-Password-Authentication';
-    let that = this;
+    const that = this;
     d.signup(signUpData, function (err) {
       if (err) {
-        that.toastr.error('Error :', err.message);
-      }else{
-        that.toastr.success('Message :', 'Registered Successfully !!');
-      }
-     
-    });
-    console.log(d);
-    // this.signUpForm.reset();
+        that.toaster.error('Error :', err.message);
+      } else{
+        that.toaster.success('Message :', 'Registered Successfully !!');
+        that.signUpForm.reset();
+      }     
+    });   
   }
-
+  /** social media login  */
+  googleSignIn(): void {
+    this.authService.oAuthGoogleLogin();
+  }
+  linkedinSignIn(): void {
+    this.authService.oAuthLinkedinLogin();
+  }
+  facebookSignIn(): void {
+    this.authService.oAuthFacebookLogin();
+  }
 }

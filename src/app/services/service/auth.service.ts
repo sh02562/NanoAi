@@ -35,11 +35,18 @@ export class AuthService {
       connection: 'google-oauth2'
     });
   }
-  /** defining function for twitter login */
-  oAuthTwitterLogin() {
+  /** defining function for linkedin login */
+  oAuthLinkedinLogin() {
     // Trigger login popup with twitter
     this.auth0.popup.authorize({
-      connection: 'twitter'
+      connection: 'linkedin'
     });
   }
+    /** defining function for facebook login */
+    oAuthFacebookLogin() {
+      // Trigger login popup with twitter
+      this.auth0.popup.authorize({
+        connection: 'facebook'
+      });
+    }
 }
