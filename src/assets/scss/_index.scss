@@ -242,7 +242,10 @@
 
       .password-wrapper {
         border-color: #efefef;
-        height: 50px;
+        height: 52px;
+        small{
+          z-index: 999;
+        }
       }
 
       .forget-password-wrapper {

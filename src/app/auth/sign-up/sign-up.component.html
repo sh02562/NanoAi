@@ -15,126 +15,145 @@
                                     <h5 class="text-center mt-4 new-account-wrapper">Create New Account</h5>
                                 </div>
                                 <form class="form-wrapper envelope-icon" [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
-                                    <div class="form-group position-relative password-wrapper">
-                                        <input autocomplete="off" type="text" name="email" formControlName="email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
-                                        [class.is-invalid]="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched">
-                                        <small class="text-danger" [class.d-none]="signUpForm.get('email').valid || signUpForm.get('email').untouched">Please enter Email-Id in email@gmail.com format</small>
-                                        <div class="position-absolute inputs-img input-svg-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
-                                                viewBox="0 0 22 22">
-                                                <path fill="none" d="M0 0h22v22H0z" />
-                                                <path fill="#a5a5a5" class="main-icon"
-                                                    d="M20 5.75A1.781 1.781 0 0 0 18.2 4H3.8A1.781 1.781 0 0 0 2 5.75v10.5A1.781 1.781 0 0 0 3.8 18h14.4a1.781 1.781 0 0 0 1.8-1.75zm-1.8 0L11 10.125 3.8 5.75zm0 10.5H3.8V7.5l7.2 4.375L18.2 7.5z" />
-                                            </svg>
-                                        </div>
-                                        <span class="highlight"></span>
-                                        <span class="bar"></span>
-                                        <label>Email</label>
-                                    </div>
-                                    <div class="form-group position-relative password-wrapper">
-                                        <input autocomplete="off" type="text" name="userName" required formControlName="userName"  [class.is-invalid]="signUpForm.get('userName').invalid && signUpForm.get('userName').touched" >
-                                        <small class="text-danger" [class.d-none]="signUpForm.get('userName').valid || signUpForm.get('userName').untouched">Please enter User Name</small>
-                                        <div class="position-absolute inputs-img input-svg-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
-                                                viewBox="0 0 22 22">
-                                                <path fill="none" d="M0 0h22v22H0z" />
-                                                <path fill="#a5a5a5" class="main-icon"
-                                                    d="M11 5.663A1.837 1.837 0 1 1 9.162 7.5 1.837 1.837 0 0 1 11 5.663m0 7.875c2.6 0 5.337 1.278 5.337 1.838v.962H5.663v-.962c0-.56 2.739-1.838 5.337-1.838M11 4a3.5 3.5 0 1 0 3.5 3.5A3.5 3.5 0 0 0 11 4zm0 7.875c-2.336 0-7 1.173-7 3.5V18h14v-2.625c0-2.327-4.664-3.5-7-3.5z" />
-                                            </svg>
-                                        </div>
-                                        <span class="highlight"></span>
-                                        <span class="bar"></span>
-                                        <label>User Name</label>
-                                    </div>
-
-                                    <div class="form-group position-relative password-wrapper">
-                                        <input autocomplete="off" type="text" name="mobileNumber" required formControlName="mobileNumber"  [class.is-invalid]="signUpForm.get('mobileNumber')?.invalid && signUpForm.get('mobileNumber').touched" pattern="^\d{10}$">
-                                        <small class="text-danger" [class.d-none]="signUpForm.get('mobileNumber').valid || signUpForm.get('mobileNumber').untouched">10 Digit Phone Number Required</small>
-                                        <div class="position-absolute inputs-img input-svg-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
-                                                viewBox="0 0 22 22">
-                                                <path fill="none" d="M0 0h22v22H0z" />
-                                                <path fill="#a5a5a5" class="main-icon"
-                                                    d="M13.667 11h1.778A4.446 4.446 0 0 0 11 6.556v1.777A2.663 2.663 0 0 1 13.667 11zm3.556 0H19a8 8 0 0 0-8-8v1.778A6.218 6.218 0 0 1 17.222 11zm.889 3.111a10.1 10.1 0 0 1-3.173-.507.991.991 0 0 0-.276-.044.911.911 0 0 0-.631.258l-1.956 1.956a13.374 13.374 0 0 1-5.858-5.858l1.955-1.965a.853.853 0 0 0 .227-.889 10.1 10.1 0 0 1-.507-3.173A.892.892 0 0 0 7 3H3.889A.892.892 0 0 0 3 3.889 15.11 15.11 0 0 0 18.111 19a.892.892 0 0 0 .889-.889V15a.892.892 0 0 0-.889-.889zM4.8 4.778h1.338a12.254 12.254 0 0 0 .4 2.293L5.471 8.147A13.642 13.642 0 0 1 4.8 4.778zM17.222 17.2a13.246 13.246 0 0 1-3.378-.676l1.067-1.067a11.336 11.336 0 0 0 2.311.4z" />
-                                            </svg>
-                                        </div>
-                                        <span class="highlight"></span>
-                                        <span class="bar"></span>
-                                        <label>Mobile Number</label>
-                                    </div>
-
-                                    <div class="form-group position-relative password-wrapper">
-                                        <input autocomplete="off" type="text" name="organization" required formControlName="organization"  [class.is-invalid]="signUpForm.get('organization')?.invalid && signUpForm.get('organization').touched">
-                                        <small class="text-danger" [class.d-none]="signUpForm.get('organization').valid || signUpForm.get('organization').untouched">Please enter Organization</small>
-                                        <div class="position-absolute inputs-img input-svg-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
-                                                viewBox="0 0 22 22">
-                                                <g>
-                                                    <path fill="none" d="M0 0H22V22H0z" />
-                                                </g>
-                                                <g>
+                                    <div class="form-group password-wrapper">
+                                        <div class="position-relative" [class.invalid-input]="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched">
+                                            <input autocomplete="off" type="text" name="email" formControlName="email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                                            [class.is-invalid]="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched">
+                                           
+                                            <div class="position-absolute inputs-img input-svg-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                    viewBox="0 0 22 22">
+                                                    <path fill="none" d="M0 0h22v22H0z" />
                                                     <path fill="#a5a5a5" class="main-icon"
-                                                        d="M15.444 10.111V3H6.556v3.556H3V19h7.111v-3.556h1.778V19H19v-8.889zm-8.888 7.111H4.778v-1.778h1.778zm0-3.556H4.778v-1.777h1.778zm0-3.556H4.778V8.333h1.778zm3.556 3.556H8.333v-1.777h1.778zm0-3.556H8.333V8.333h1.778zm0-3.556H8.333V4.778h1.778zm3.556 7.111h-1.779v-1.776h1.778zm0-3.556h-1.779V8.333h1.778zm0-3.556h-1.779V4.778h1.778zm3.556 10.667h-1.78v-1.776h1.778zm0-3.556h-1.78v-1.775h1.778z"
-                                                        transform="translate(3 3) translate(-3 -3)" />
-                                                </g>
-                                            </svg>
+                                                        d="M20 5.75A1.781 1.781 0 0 0 18.2 4H3.8A1.781 1.781 0 0 0 2 5.75v10.5A1.781 1.781 0 0 0 3.8 18h14.4a1.781 1.781 0 0 0 1.8-1.75zm-1.8 0L11 10.125 3.8 5.75zm0 10.5H3.8V7.5l7.2 4.375L18.2 7.5z" />
+                                                </svg>
+                                            </div>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label>Email</label>
                                         </div>
-                                        <span class="highlight"></span>
-                                        <span class="bar"></span>
-                                        <label>Organization</label>
+                                        <small class="text-danger position-absolute" [class.d-none]="signUpForm.get('email').valid || signUpForm.get('email').untouched">Please enter Email-Id in email@gmail.com format</small>
                                     </div>
-                                    <div class="form-group position-relative password-wrapper">
-                                        <input autocomplete="off" [type]="showPassword ? 'password' : 'text'" name="password" required formControlName="password"  [class.is-invalid]="signUpForm.get('password')?.invalid && signUpForm.get('password').touched">
-                                        <small class="text-danger" [class.d-none]="signUpForm.get('password').valid || signUpForm.get('password').untouched">Password Required </small>
-                                        <small class="text-danger" *ngIf="signUpForm.get('password').hasError('pattern')"> Enter minimum 8 character and at least 1 uppercase letter, 1 lowercase
-                                            letter and 1 number</small>
-                                        <div class="position-absolute inputs-img input-svg-icon">
-                                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
-                                                viewBox="0 0 22 22">
-                                                <path fill="none" d="M0 0h22v22H0z" />
-                                                <path fill="#a5a5a5" class="main-icon"
-                                                    d="M16.25 7.333h-.875V5.524A4.453 4.453 0 0 0 11 1a4.453 4.453 0 0 0-4.375 4.524v1.81H5.75A1.786 1.786 0 0 0 4 9.143v9.047A1.786 1.786 0 0 0 5.75 20h10.5A1.786 1.786 0 0 0 18 18.19V9.143a1.786 1.786 0 0 0-1.75-1.81zM8.375 5.524a2.626 2.626 0 1 1 5.25 0v1.81h-5.25zM16.25 18.19H5.75V9.143h10.5zM11 15.476a1.811 1.811 0 1 0-1.75-1.81 1.786 1.786 0 0 0 1.75 1.81z" />
-                                            </svg>                                            
-                                        </div>                                         
-                                        <span class="highlight"></span>
-                                        <span class="bar"></span>
-                                        <label>Password</label>
-                                        <div class="position-absolute visible-img">
-                                             <!-- <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
-                                                viewBox="0 0 22 22">
-                                                <path fill="none" class="main-icon"
-                                                    d="M0 0h22v22H0zm0 0h22v22H0zm0 0h22v22H0zm0 0h22v22H0z" />
-                                                <path fill="#a5a5a5"
-                                                    d="M11 5.629a8.9 8.9 0 0 1 8.018 4.926 8.657 8.657 0 0 1-2.191 2.794l1.282 1.263A10.571 10.571 0 0 0 21 10.555a10.75 10.75 0 0 0-10-6.717 10.922 10.922 0 0 0-3.309.51l1.5 1.478A9.322 9.322 0 0 1 11 5.629zm-.973 1.021l1.882 1.85a2.255 2.255 0 0 1 1.164 1.15l1.882 1.85a4.132 4.132 0 0 0 .127-.958A4.046 4.046 0 0 0 11 6.525a3.913 3.913 0 0 0-.973.125zM1.918 3.722l2.436 2.4A10.526 10.526 0 0 0 1 10.555a10.817 10.817 0 0 0 13.927 5.982l3.109 3.063 1.282-1.263L3.2 2.45zm6.818 6.717l2.373 2.337a.463.463 0 0 1-.109.018 2.257 2.257 0 0 1-2.273-2.239c0-.045.009-.072.009-.117zM5.645 7.393l1.591 1.568A4.033 4.033 0 0 0 11 14.585a4.157 4.157 0 0 0 1.609-.322l.891.878a9.618 9.618 0 0 1-2.5.34 8.9 8.9 0 0 1-8.018-4.926 8.9 8.9 0 0 1 2.663-3.162z" />
-                                            </svg>  -->
-                                            <span (click)="showPassword = !showPassword">{{showPassword ? 'Show' : 'Hide'}}</span>
+                                    <div class="form-group password-wrapper">
+                                        <div class="position-relative"  [class.invalid-input]="signUpForm.get('userName')?.invalid && signUpForm.get('userName')?.touched">
+                                            <input autocomplete="off" type="text" name="userName" required formControlName="userName"  [class.is-invalid]="signUpForm.get('userName').invalid && signUpForm.get('userName').touched" >
+                                            <div class="position-absolute inputs-img input-svg-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                    viewBox="0 0 22 22">
+                                                    <path fill="none" d="M0 0h22v22H0z" />
+                                                    <path fill="#a5a5a5" class="main-icon"
+                                                        d="M11 5.663A1.837 1.837 0 1 1 9.162 7.5 1.837 1.837 0 0 1 11 5.663m0 7.875c2.6 0 5.337 1.278 5.337 1.838v.962H5.663v-.962c0-.56 2.739-1.838 5.337-1.838M11 4a3.5 3.5 0 1 0 3.5 3.5A3.5 3.5 0 0 0 11 4zm0 7.875c-2.336 0-7 1.173-7 3.5V18h14v-2.625c0-2.327-4.664-3.5-7-3.5z" />
+                                                </svg>
+                                            </div>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label>User Name</label>
                                         </div>
+                                        <small class="text-danger position-absolute" [class.d-none]="signUpForm.get('userName').valid || signUpForm.get('userName').untouched">Please enter User Name</small>
                                     </div>
-                                    <div class="form-group position-relative password-wrapper">
-                                        <input autocomplete="off" [type]="showCpasswd ? 'password' : 'text'" name="confirmPassword" required formControlName="confirmPassword"  [class.is-invalid]="signUpForm.get('confirmPassword')?.invalid && signUpForm.get('confirmPassword').touched">                                    
-                                        <small class="text-danger" [class.d-none]="signUpForm.get('confirmPassword').valid || signUpForm.get('confirmPassword').untouched">Confirm Password Required</small>
-                                        <small class="text-danger" *ngIf="signUpForm.hasError('misMatch')">Confirm Password Not Matched</small>                                       
-                                        <div class="position-absolute inputs-img input-svg-icon">
-                                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
-                                                viewBox="0 0 22 22">
-                                                <path fill="none" d="M0 0h22v22H0z" />
-                                                <path fill="#a5a5a5" class="main-icon"
-                                                    d="M16.25 7.333h-.875V5.524A4.453 4.453 0 0 0 11 1a4.453 4.453 0 0 0-4.375 4.524v1.81H5.75A1.786 1.786 0 0 0 4 9.143v9.047A1.786 1.786 0 0 0 5.75 20h10.5A1.786 1.786 0 0 0 18 18.19V9.143a1.786 1.786 0 0 0-1.75-1.81zM8.375 5.524a2.626 2.626 0 1 1 5.25 0v1.81h-5.25zM16.25 18.19H5.75V9.143h10.5zM11 15.476a1.811 1.811 0 1 0-1.75-1.81 1.786 1.786 0 0 0 1.75 1.81z" />
-                                            </svg>                                            
+
+                                    <div class="form-group password-wrapper">
+                                        <div class="position-relative"  [class.invalid-input]="signUpForm.get('mobileNumber')?.invalid && signUpForm.get('mobileNumber')?.touched">
+                                            
+                                            <input autocomplete="off" type="text" name="mobileNumber" required formControlName="mobileNumber"  [class.is-invalid]="signUpForm.get('mobileNumber')?.invalid && signUpForm.get('mobileNumber').touched" pattern="^\d{10}$">
+                                            <div class="position-absolute inputs-img input-svg-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                    viewBox="0 0 22 22">
+                                                    <path fill="none" d="M0 0h22v22H0z" />
+                                                    <path fill="#a5a5a5" class="main-icon"
+                                                        d="M13.667 11h1.778A4.446 4.446 0 0 0 11 6.556v1.777A2.663 2.663 0 0 1 13.667 11zm3.556 0H19a8 8 0 0 0-8-8v1.778A6.218 6.218 0 0 1 17.222 11zm.889 3.111a10.1 10.1 0 0 1-3.173-.507.991.991 0 0 0-.276-.044.911.911 0 0 0-.631.258l-1.956 1.956a13.374 13.374 0 0 1-5.858-5.858l1.955-1.965a.853.853 0 0 0 .227-.889 10.1 10.1 0 0 1-.507-3.173A.892.892 0 0 0 7 3H3.889A.892.892 0 0 0 3 3.889 15.11 15.11 0 0 0 18.111 19a.892.892 0 0 0 .889-.889V15a.892.892 0 0 0-.889-.889zM4.8 4.778h1.338a12.254 12.254 0 0 0 .4 2.293L5.471 8.147A13.642 13.642 0 0 1 4.8 4.778zM17.222 17.2a13.246 13.246 0 0 1-3.378-.676l1.067-1.067a11.336 11.336 0 0 0 2.311.4z" />
+                                                </svg>
+                                            </div>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label>Mobile Number</label>
                                         </div>
-                                        <span class="highlight"></span>
-                                        <span class="bar"></span>
-                                        <label>Confirm Password</label>
-                                        <div class="position-absolute visible-img">
-                                            <span (click)="showCpasswd = !showCpasswd">{{showCpasswd ? 'Show' : 'Hide'}}</span>
-                                            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
-                                                viewBox="0 0 22 22">
-                                                <path fill="none" class="main-icon"
-                                                    d="M0 0h22v22H0zm0 0h22v22H0zm0 0h22v22H0zm0 0h22v22H0z" />
-                                                <path fill="#a5a5a5"
-                                                    d="M11 5.629a8.9 8.9 0 0 1 8.018 4.926 8.657 8.657 0 0 1-2.191 2.794l1.282 1.263A10.571 10.571 0 0 0 21 10.555a10.75 10.75 0 0 0-10-6.717 10.922 10.922 0 0 0-3.309.51l1.5 1.478A9.322 9.322 0 0 1 11 5.629zm-.973 1.021l1.882 1.85a2.255 2.255 0 0 1 1.164 1.15l1.882 1.85a4.132 4.132 0 0 0 .127-.958A4.046 4.046 0 0 0 11 6.525a3.913 3.913 0 0 0-.973.125zM1.918 3.722l2.436 2.4A10.526 10.526 0 0 0 1 10.555a10.817 10.817 0 0 0 13.927 5.982l3.109 3.063 1.282-1.263L3.2 2.45zm6.818 6.717l2.373 2.337a.463.463 0 0 1-.109.018 2.257 2.257 0 0 1-2.273-2.239c0-.045.009-.072.009-.117zM5.645 7.393l1.591 1.568A4.033 4.033 0 0 0 11 14.585a4.157 4.157 0 0 0 1.609-.322l.891.878a9.618 9.618 0 0 1-2.5.34 8.9 8.9 0 0 1-8.018-4.926 8.9 8.9 0 0 1 2.663-3.162z" />
-                                            </svg> -->
+                                        <small class="text-danger position-absolute" [class.d-none]="signUpForm.get('mobileNumber').valid || signUpForm.get('mobileNumber').untouched">10 Digit Phone Number Required</small>
+
+                                    </div>
+
+                                    <div class="form-group  password-wrapper">
+                                        <div class="position-relative"  [class.invalid-input]="signUpForm.get('organization')?.invalid && signUpForm.get('organization')?.touched">
+                                            <input autocomplete="off" type="text" name="organization" required formControlName="organization"  [class.is-invalid]="signUpForm.get('organization')?.invalid && signUpForm.get('organization').touched">
+                                            <div class="position-absolute inputs-img input-svg-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                    viewBox="0 0 22 22">
+                                                    <g>
+                                                        <path fill="none" d="M0 0H22V22H0z" />
+                                                    </g>
+                                                    <g>
+                                                        <path fill="#a5a5a5" class="main-icon"
+                                                            d="M15.444 10.111V3H6.556v3.556H3V19h7.111v-3.556h1.778V19H19v-8.889zm-8.888 7.111H4.778v-1.778h1.778zm0-3.556H4.778v-1.777h1.778zm0-3.556H4.778V8.333h1.778zm3.556 3.556H8.333v-1.777h1.778zm0-3.556H8.333V8.333h1.778zm0-3.556H8.333V4.778h1.778zm3.556 7.111h-1.779v-1.776h1.778zm0-3.556h-1.779V8.333h1.778zm0-3.556h-1.779V4.778h1.778zm3.556 10.667h-1.78v-1.776h1.778zm0-3.556h-1.78v-1.775h1.778z"
+                                                            transform="translate(3 3) translate(-3 -3)" />
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label>Organization</label>
+
                                         </div>
+                                        <small class="text-danger position-absolute" [class.d-none]="signUpForm.get('organization').valid || signUpForm.get('organization').untouched">Please enter Organization</small>
+
+                                    </div>
+                                    <div class="form-group  password-wrapper">
+                                        <div class="position-relative"  [class.invalid-input]="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched">
+                                            <input autocomplete="off" [type]="showPassword ? 'password' : 'text'" name="password" required formControlName="password"  [class.is-invalid]="signUpForm.get('password')?.invalid && signUpForm.get('password').touched">
+                                            
+                                            <div class="position-absolute inputs-img input-svg-icon">
+                                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                    viewBox="0 0 22 22">
+                                                    <path fill="none" d="M0 0h22v22H0z" />
+                                                    <path fill="#a5a5a5" class="main-icon"
+                                                        d="M16.25 7.333h-.875V5.524A4.453 4.453 0 0 0 11 1a4.453 4.453 0 0 0-4.375 4.524v1.81H5.75A1.786 1.786 0 0 0 4 9.143v9.047A1.786 1.786 0 0 0 5.75 20h10.5A1.786 1.786 0 0 0 18 18.19V9.143a1.786 1.786 0 0 0-1.75-1.81zM8.375 5.524a2.626 2.626 0 1 1 5.25 0v1.81h-5.25zM16.25 18.19H5.75V9.143h10.5zM11 15.476a1.811 1.811 0 1 0-1.75-1.81 1.786 1.786 0 0 0 1.75 1.81z" />
+                                                </svg>                                            
+                                            </div>                                         
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label>Password</label>
+                                            <div class="position-absolute visible-img">
+                                                 <!-- <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                    viewBox="0 0 22 22">
+                                                    <path fill="none" class="main-icon"
+                                                        d="M0 0h22v22H0zm0 0h22v22H0zm0 0h22v22H0zm0 0h22v22H0z" />
+                                                    <path fill="#a5a5a5"
+                                                        d="M11 5.629a8.9 8.9 0 0 1 8.018 4.926 8.657 8.657 0 0 1-2.191 2.794l1.282 1.263A10.571 10.571 0 0 0 21 10.555a10.75 10.75 0 0 0-10-6.717 10.922 10.922 0 0 0-3.309.51l1.5 1.478A9.322 9.322 0 0 1 11 5.629zm-.973 1.021l1.882 1.85a2.255 2.255 0 0 1 1.164 1.15l1.882 1.85a4.132 4.132 0 0 0 .127-.958A4.046 4.046 0 0 0 11 6.525a3.913 3.913 0 0 0-.973.125zM1.918 3.722l2.436 2.4A10.526 10.526 0 0 0 1 10.555a10.817 10.817 0 0 0 13.927 5.982l3.109 3.063 1.282-1.263L3.2 2.45zm6.818 6.717l2.373 2.337a.463.463 0 0 1-.109.018 2.257 2.257 0 0 1-2.273-2.239c0-.045.009-.072.009-.117zM5.645 7.393l1.591 1.568A4.033 4.033 0 0 0 11 14.585a4.157 4.157 0 0 0 1.609-.322l.891.878a9.618 9.618 0 0 1-2.5.34 8.9 8.9 0 0 1-8.018-4.926 8.9 8.9 0 0 1 2.663-3.162z" />
+                                                </svg>  -->
+                                                <span (click)="showPassword = !showPassword">{{showPassword ? 'Show' : 'Hide'}}</span>
+                                                <!-- <span (click)="showPassword = !showPassword" class="far" [ngClass]="showPassword === true ? 'fa-eye' : 'fa-eye-slash'"></span> -->
+                                            </div>
+                                        </div>
+                                        <small class="text-danger position-absolute" [class.d-none]="signUpForm.get('password').valid || signUpForm.get('password').untouched">Password Required</small>
+                                            <small class="text-danger position-absolute" *ngIf="signUpForm.get('password').hasError('minlength')">Password must be minimum 8 character</small>
+                                    </div>
+                                    <div class="form-group  password-wrapper">
+                                        <div class="position-relative">
+                                            <input autocomplete="off" [type]="showCpasswd ? 'password' : 'text'" name="confirmPassword" required formControlName="confirmPassword"  [class.is-invalid]="signUpForm.get('confirmPassword')?.invalid && signUpForm.get('confirmPassword').touched">                                    
+                                                                                   
+                                            <div class="position-absolute inputs-img input-svg-icon">
+                                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                    viewBox="0 0 22 22">
+                                                    <path fill="none" d="M0 0h22v22H0z" />
+                                                    <path fill="#a5a5a5" class="main-icon"
+                                                        d="M16.25 7.333h-.875V5.524A4.453 4.453 0 0 0 11 1a4.453 4.453 0 0 0-4.375 4.524v1.81H5.75A1.786 1.786 0 0 0 4 9.143v9.047A1.786 1.786 0 0 0 5.75 20h10.5A1.786 1.786 0 0 0 18 18.19V9.143a1.786 1.786 0 0 0-1.75-1.81zM8.375 5.524a2.626 2.626 0 1 1 5.25 0v1.81h-5.25zM16.25 18.19H5.75V9.143h10.5zM11 15.476a1.811 1.811 0 1 0-1.75-1.81 1.786 1.786 0 0 0 1.75 1.81z" />
+                                                </svg>                                            
+                                            </div>
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label>Confirm Password</label>
+                                            <div class="position-absolute visible-img">
+                                                <span (click)="showCpasswd = !showCpasswd">{{showCpasswd ? 'Show' : 'Hide'}}</span>
+                                                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                    viewBox="0 0 22 22">
+                                                    <path fill="none" class="main-icon"
+                                                        d="M0 0h22v22H0zm0 0h22v22H0zm0 0h22v22H0zm0 0h22v22H0z" />
+                                                    <path fill="#a5a5a5"
+                                                        d="M11 5.629a8.9 8.9 0 0 1 8.018 4.926 8.657 8.657 0 0 1-2.191 2.794l1.282 1.263A10.571 10.571 0 0 0 21 10.555a10.75 10.75 0 0 0-10-6.717 10.922 10.922 0 0 0-3.309.51l1.5 1.478A9.322 9.322 0 0 1 11 5.629zm-.973 1.021l1.882 1.85a2.255 2.255 0 0 1 1.164 1.15l1.882 1.85a4.132 4.132 0 0 0 .127-.958A4.046 4.046 0 0 0 11 6.525a3.913 3.913 0 0 0-.973.125zM1.918 3.722l2.436 2.4A10.526 10.526 0 0 0 1 10.555a10.817 10.817 0 0 0 13.927 5.982l3.109 3.063 1.282-1.263L3.2 2.45zm6.818 6.717l2.373 2.337a.463.463 0 0 1-.109.018 2.257 2.257 0 0 1-2.273-2.239c0-.045.009-.072.009-.117zM5.645 7.393l1.591 1.568A4.033 4.033 0 0 0 11 14.585a4.157 4.157 0 0 0 1.609-.322l.891.878a9.618 9.618 0 0 1-2.5.34 8.9 8.9 0 0 1-8.018-4.926 8.9 8.9 0 0 1 2.663-3.162z" />
+                                                </svg> -->
+                                            </div>
+                                        </div>
+                                        <small class="text-danger position-absolute" [class.d-none]="signUpForm.get('confirmPassword').valid || signUpForm.get('confirmPassword').untouched">Confirm Password Required</small>
+                                            <small class="text-danger position-absolute" *ngIf="signUpForm.hasError('misMatch')">Confirm Password Not Matched</small>
                                     </div>
                                     <div class="form-group position-relative password-wrapper robot-recaptha">
                                         <!-- <input type="text" class="form-control name-wrapper" name="I'm not a robot"
@@ -148,7 +167,7 @@
                                         </div> -->
                                         <div class="g-recaptcha" data-sitekey="6Le6GzoUAAAAAFLfAvTGX8n2EUVdTXGNFvwYIRFa"></div>                                        
                                     </div>
-                                    <div class="m-2 account-wrapper d-flex">
+                                    <div class="mt-5 account-wrapper d-flex">
                                         <!-- <div class="rectangles"></div> -->
                                         <input type="checkbox" formControlName="loginControl" name="loginControl" [checked]="false" class="create-checkbox">
                                         <p class="text-left ml-2">By creating account, you agree to accept our <a
@@ -169,17 +188,17 @@
                                     </div>
                                     <div class="d-flex justify-content-between mb-3 buttons-wrapper">
                                         <div>
-                                            <button type="button" class="google-button" (click)="googleSignIn()">
+                                            <button type="button" class="google-button">
                                                 <span class="fab fa-google-plus-g identity-wrapper"></span>
                                                 Google</button>
                                         </div>
                                         <div>
-                                            <button type="button" class="facebook-button" (click)="facebookSignIn()">
+                                            <button type="button" class="facebook-button">
                                                 <span class="fab fa-facebook-f identity-wrapper"></span>
                                                 Facebook</button>
                                         </div>
                                         <div>
-                                            <button type="button" class="linkedin-button" (click)="linkedinSignIn()">
+                                            <button type="button" class="linkedin-button">
                                                 <span class="fab fa-linkedin-in identity-wrapper"></span>
                                                 LinkedIn</button>
                                         </div>
